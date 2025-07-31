@@ -11,12 +11,13 @@ class Role < ActiveRecord::Base
       end
     end
     
-    # Role#locations returns an array of locations from the auditions associated with this role
-    
+    def role_locations
+      role_auditions.map do |audition|
+        audition.location
+      end
+    end
 
-
-    
-    # Role#lead returns the first instance of the audition that was hired for this role or returns a string 'no actor has been hired for this role'
+ # Role#lead returns the first instance of the audition that was hired for this role or returns a string 'no actor has been hired for this role'
     
     
 
