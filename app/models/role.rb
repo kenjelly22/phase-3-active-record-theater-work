@@ -5,8 +5,9 @@ class Role < ActiveRecord::Base
       Audition.where(role_id: id)
     end
 
-    # Role#actors returns an array of names from the actors associated with this role
-    
+    def role_actors
+      role_auditions.all
+    end
 
 
     
