@@ -6,10 +6,10 @@ class Role < ActiveRecord::Base
     end
 
     def role_actors
-      role_auditions.all
+      role_auditions.map do |audition|
+        audition.actor
+      end
     end
-
-
     
     # Role#locations returns an array of locations from the auditions associated with this role
     
