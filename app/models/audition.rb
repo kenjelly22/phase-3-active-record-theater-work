@@ -1,7 +1,7 @@
 class Audition < ActiveRecord::Base
   belongs_to :role
 
-  def role
+  def audition_role
     Role.find(role_id)
   end
 
