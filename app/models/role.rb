@@ -6,15 +6,11 @@ class Role < ActiveRecord::Base
     end
 
     def role_actors
-      role_auditions.map do |audition|
-        audition.actor
-      end
+      role_auditions.map {|audition| audition.actor}
     end
     
     def role_locations
-      role_auditions.map do |audition|
-        audition.location
-      end
+      role_auditions.map {|audition| audition.location}
     end
 
     def lead
