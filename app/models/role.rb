@@ -18,11 +18,16 @@ class Role < ActiveRecord::Base
     end
 
     def lead
-      Audition.find_by(hired: true, role_id: id)
+      result = Audition.find_by(hired: true, role_id: id)
+
+      result ? result : "No actor has been hired for this role."
     end
 
-    # Role#understudy returns the second instance of the audition that was hired for this role or returns a string 'no actor has been hired for understudy for this role'
-
+    # Role#understudy returns the second instance of the audition that was hired for this role or 
+    # returns a string 'no actor has been hired for understudy for this role'
+    def understudy
+      
+    end
 
 
 end
